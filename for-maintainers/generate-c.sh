@@ -29,7 +29,8 @@ wrap_in_preprocessor_checks()
     | handle_possible_alias ECANCELED ECANCELLED \
     | handle_possible_alias ECONNREFUSED EREFUSED \
     | handle_possible_alias EDESTADDRREQ EDESTADDREQ \
-    | handle_possible_alias EINPROGRESS EINPROG
+    | handle_possible_alias EINPROGRESS EINPROG \
+    | handle_possible_alias EBADMSG EFSBADCRC
 }
 
 wrap_in_ifdef_blocks()
