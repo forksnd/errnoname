@@ -138,12 +138,8 @@ solaris()
     # Oracle does not seem to provide a stable URL to the latest
     # Solaris errno list, so we have to find and extract it:
 
-    latest_solaris_documentation=`
-        get https://docs.oracle.com/en/operating-systems/solaris/ \
-        | grep 'Information Library' | head -n1 | cut -d\" -f2
-    ` &&
     errno_documentation=`
-        get "$latest_solaris_documentation" \
+        get https://docs.oracle.com/en/operating-systems/solaris/ \
         | grep 'System Calls' | cut -d\" -f2 \
         | sed 's/^http:/https:/; s|/index.html$|/intro-2.html|'
     ` &&
