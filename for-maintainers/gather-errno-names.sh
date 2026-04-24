@@ -187,7 +187,7 @@ unixware()
     # Xinuos does not seem to provide a stable URL to the latest
     # UnixWare errno list, but newer releases seem unlikely:
 
-    get 'https://uw714doc.xinuos.com/en/man/html.2/Intro.2.html' \
+    get 'http://uw714doc.xinuos.com/en/man/html.2/Intro.2.html' \
     | grep '<BR>[1-9][0-9]* *<B>E' | cut -d\> -f4 | cut -d\< -f1
 }
 
@@ -196,7 +196,7 @@ openserver()
     # OpenServer 5 was the last unique release (6 is
     # based on UnixWare and 10 is based on FreeBSD):
 
-    get 'https://osr507doc.xinuos.com/en/man/html.S/Intro.S.html' \
+    get 'http://osr507doc.xinuos.com/en/man/html.S/Intro.S.html' \
     | grep -A1 '</TD><TD>' | grep '^E[^ ]*$'
 }
 
